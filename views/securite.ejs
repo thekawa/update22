@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mesures de securites</title>
+  <meta charset="utf-8">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="popupstyle.css" type="text/css">
+</head>
+<body>
+ <!--Navbar -->
+ <nav class="navbar">
+   <div class="content">   
+     <div class="logo">
+       <a href="#"><img src="assets/cropped-Site-logo-copy.png" style=" width: 100px; "></a>
+     <ul class="menu-list" >
+       <div class="icon cancel-btn">
+         <i class="fas fa-times"></i>
+       </div>
+      <li ><a href="/">Home</a></li>
+       <li><a href="#cartes">Nos cartes</a></li>
+       <li><a href="#about">A propos de nous</a></li>
+       <li><a href="/securite">Votre securite</a></li>
+       <li><a href="#contact">Contactez nous</a></li>
+       <li style="padding-left: 20px;"><a href="/auth/login"><button  type="button" class="btn login-btn " style="color: #fff;background-color: #dc143c; "><i class="" aria-hidden="true"></i>Login</button></a></li>
+       <li style="padding-left: 20px;"><a href="/auth/register"><button type="button" class="btn btn-dark " style="color: #fff;background-color: #1a1919e0; "><i class="" aria-hidden="true"></i>Sign up</button></a></li>      
+        </ul></div>
+     <div class="icon menu-btn">
+       <i class="fas fa-bars"></i>
+     </div>
+   </div>
+ </nav>
+
+<!--script navbar -->
+ <script>
+   const body = document.querySelector("body");
+   const navbar = document.querySelector(".navbar");
+   const menuBtn = document.querySelector(".menu-btn");
+   const cancelBtn = document.querySelector(".cancel-btn");
+   menuBtn.onclick = ()=>{
+     navbar.classList.add("show");
+     menuBtn.classList.add("hide");
+     body.classList.add("disabled");
+   }
+   cancelBtn.onclick = ()=>{
+     body.classList.remove("disabled");
+     navbar.classList.remove("show");
+     menuBtn.classList.remove("hide");
+   }
+   window.onscroll = ()=>{
+     this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+   }
+ </script>
+<!-- style navbar --> 
+ <style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins', sans-serif;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+   width: 10px;
+}
+::-webkit-scrollbar-track {
+   background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+   background: #888;
+}
+::selection{
+ background: #dc143c ;
+}
+.content{
+ max-width: 1250px;
+ margin: auto;
+ padding: 0 30px;
+}
+.navbar{
+ position: fixed;
+   width: 100%;
+   z-index: 999;
+   padding: 30px 0;
+   font-family: 'Ubuntu', sans-serif;
+   transition: all 0.3s ease;
+}
+.navbar.sticky{
+ background: #ffffff;
+ padding: 10px 0;
+ border-bottom: 3px solid #dc143c;
+
+ 
+}
+.navbar.sticky li a {
+ color:#000000;
+ 
+}
+.navbar .content .logo{
+ display: flex;
+ 
+ justify-content: space-between;
+}
+
+.navbar .menu-list{
+ display: inline-flex;
+}
+.menu-list li{
+ list-style: none;
+ 
+}
+.menu-list li a{
+ 
+   color: rgb(0, 0, 0);
+   font-size: 18px;
+   font-weight: 500;
+   margin-left: 25px;
+   transition: color 0.3s ease;
+}
+.menu-list li a:hover{
+ color: #dc143c ;
+}
+.icon{
+ color: #dc143c;
+ padding-left: 39px;
+ font-size: 20px;
+ cursor: pointer;
+ display: none;
+}
+.menu-list .cancel-btn{
+ position: absolute;
+ right: 30px;
+ top: 20px;
+}
+
+@media (max-width: 868px) {
+ body.disabled{
+   overflow: hidden;
+ }
+ .icon{
+   display: block;
+ }
+ .icon.hide{
+   display: none;
+ }
+ .navbar .menu-list{
+   position: fixed;
+   height: 100vh;
+   width: 100%;
+   max-width: 400px;
+   left: -100%;
+   top: 0px;
+   display: block;
+   padding: 40px 0;
+   text-align: center;
+   background: rgba(97, 97, 97, 0.925);
+   transition: all 0.3s ease;
+ }
+ .navbar.show .menu-list{
+   left: 0%;
+ }
+ .navbar .menu-list li{
+   margin-top: 45px;
+ }
+ .navbar .menu-list li a{
+   font-size: 23px;
+   margin-left: -100%;
+   transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+ }
+ .navbar.show .menu-list li a{
+   margin-left: 0px;
+ }
+}
+@media (max-width: 380px) {
+ .navbar .logo a{
+   font-size: 27px;
+ }
+}
+
+</style>
+
+
+
+
+
+<br>
+<br>
+ <section class="services" >
+    <div class="container">
+       <div class="row">
+           <div class="section-title">
+              <h1>Mesures de securite pour les chauffeurs</h1>
+           </div>
+       </div>
+       <div class="row">
+          <div class="service-items">
+              <div class="row">
+                 <!-- item start -->
+                 <div class="item">
+                  <a href="#" class="mesure-securite card border-0 shadow-lg overflow-hidden"></a>
+                  <img class="mesure-securite-img card-img" src="./assets/img/recent-work-01.jpg" alt="Card image">
+                 
+                    <div class="item-inner">
+                       <h3>Carte1</h3>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                    
+                       <div class="read-more-cont">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                       </div>
+                       <button class="btn" type="button" >Lire la suite</button>
+                    </div>
+                 </div>
+                 
+                 <!-- item end -->
+                 <!-- item start -->
+                 <div class="item">
+                  <a href="#" class="mesure-securite card border-0 shadow-lg overflow-hidden"></a>
+                  <img class="mesure-securite-img card-img" src="./assets/img/recent-work-02.jpg" alt="Card image">
+                 
+                    <div class="item-inner">
+                       <h3>Photography</h3>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                       <div class="read-more-cont">
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                         <img src="1.jpg" alt="img">
+                         <img src="2.jpg" alt="img">
+                       </div>
+                       <button class="btn" type="button">Read More</button>
+                    </div>
+                 </div>
+                 <!-- item end -->
+                 <!-- item start -->
+                 <div class="item">
+                  <img class="mesure-securite-img card-img" src="./assets/img/recent-work-03.jpg" alt="Card image">
+                    <div class="item-inner">
+                       <h3>Graphic Design</h3>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                       <div class="read-more-cont">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                       </div>
+                       <button class="btn" type="button">Read More</button>
+                    </div>
+                 </div>
+                 <!-- item end -->
+                 
+                 <!-- part 2 -->
+                 <div class="section-title">
+                   <br>
+                 <br>
+                  <h1>Mesures de securite pour les clients</h1>
+               </div>
+               <br>
+
+                  <!-- item start -->
+                  <div class="item">
+                    <img class="mesure-securite-img card-img" src="./assets/img/recent-work-01.jpg" alt="Card image">
+                      <div class="item-inner">
+                         <h3>Web Design</h3>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                         <div class="read-more-cont">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                         </div>
+                         <button class="btn" type="button">Read More</button>
+                      </div>
+                   </div>
+                   
+                   <!-- item end -->
+                   <!-- item start -->
+                   <div class="item">
+                    <a href="#" class="mesure-securite card border-0 shadow-lg overflow-hidden"></a>
+                    <img class="mesure-securite-img card-img" src="./assets/img/recent-work-02.jpg" alt="Card image">
+                   
+                      <div class="item-inner">
+                         <h3>Photography</h3>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                         <div class="read-more-cont">
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                           <img src="1.jpg" alt="img">
+                           <img src="2.jpg" alt="img">
+                         </div>
+                         <button class="btn" type="button">Read More</button>
+                      </div>
+                   </div>
+                   <!-- item end -->
+                   <!-- item start -->
+                   <div class="item">
+                    <img class="mesure-securite-img card-img" src="./assets/img/recent-work-03.jpg" alt="Card image">
+                      <div class="item-inner">
+                         <h3>Graphic Design</h3>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                         <div class="read-more-cont">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusm.</p>
+                         </div>
+                         <button class="btn" type="button">Read More</button>
+                      </div>
+                   </div>
+                   <!-- item end -->
+               
+              </div>
+          </div>
+       </div>
+
+
+       
+    </div>
+    
+  </div>
+ </section>
+
+  <!-- read more popup box start -->
+   <div class="popup-box">
+      <div class="popup-content">
+          <div class="popup-header">
+             <h3></h3>
+             <span class="popup-close-icon">&times;</span>
+          </div>
+          <div class="popup-body">
+            
+          </div>
+          <div class="popup-footer">
+            <button class="btn popup-close-btn">Close</button>
+          </div>
+    
+  
+
+   </div>
+</div>
+  <!-- read more popup box start -->
+  <div class="popup-box">
+    <div class="popup-content">
+        <div class="popup-header">
+           <h3></h3>
+           <span class="popup-close-icon">&times;</span>
+        </div>
+        <div class="popup-body">
+          
+        </div>
+        <div class="popup-footer">
+          <button class="btn popup-close-btn">Close</button>
+        </div>
+  
+
+
+ </div>
+</div>
+<script src="popupscript.js"></script>
+<%- include('partials/footer.ejs') %>
